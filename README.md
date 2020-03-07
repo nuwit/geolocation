@@ -45,7 +45,13 @@ These parameters will look like something like this:
  ```
 As it sounds, the success function is what happens when we successfully receive the user's location. The error function is triggered only when something goes wrong. Timeout is how long the function will wait before it gives up on receiving data. Maximum age is the age of stalest data that the function will accept. 
 
-IF they give us permission, we can access a user's position as easily as:
+You don't necessarily need the error function or the options. If that's the case, and the request fails, nothing will happen. 
+
+The successful request will return a [GeolocationPosition](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition).
+
+`Geolocation.coords` will give us latitude and longitude. Technically, we could use latitude and longitude to infer all information about a user's location. Lat and Long (and money) is basically all you need to integrate with the [Google Maps API](https://cloud.google.com/maps-platform/) to create complex geolocation web apps. 
+
+But we're not gonna mess with that API today. Besides, even without it, IF they give us permission, we can access a user's position as easily as:
 
 ```
 <script>
