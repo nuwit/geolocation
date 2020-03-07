@@ -64,4 +64,4 @@ if (navigator.geolocation) {
 ```
 within a `index.html` file. 
 
-You can view those coordinates in by opening up the Javascript Console in Chrome (Ctrl + Shift + J. Mac: Cmd + Opt +J).
+You can view those coordinates by opening up the Javascript Console in Chrome (Ctrl + Shift + J. Mac: Cmd + Opt +J).
