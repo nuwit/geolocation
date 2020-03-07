@@ -65,3 +65,7 @@ if (navigator.geolocation) {
 within a `index.html` file. 
 
 You can view those coordinates by opening up the Javascript Console in Chrome (Ctrl + Shift + J. Mac: Cmd + Opt +J).
+
+Why do we check that `navigator.geolocation` exists? Some devices may not support geolocation. Some users may have blocked all geolocation requests. This will make `navigator.geolocation` equal `undefined`. `undefined` means a value was never set for that property. This is opposed to `null`, which is a calculated choice in value to convey a nonexistent value. 
+
+We need to ensure that `navigator.geolocation` is not undefined before we execute methods on it. Otherwise, we'll get a `TypeError`. 
