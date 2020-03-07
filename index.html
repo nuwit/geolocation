@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="navbar"><span>Geolocation Workshop</span></div>
+    <div id="wrapper">
+      <button id="location-button">Get User Location</button>
+      <div id="output"></div>
+    </div>
+
+    <script>
+      $("#location-button").click(function() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(position);
+            const link = `https://www.google.com/maps/place/${position.coords.latitude},${position.coords.longitude}/@${position.coords.latitude},${position.coords.longitude}, 15z/data=!4m5!3m4!1s0x0:0x0!8m2!3d42.3274722!4d-71.1068333`;
+            $("<a>", {
+              text: "Your Location",
+              href: link,
+              target: "_blank"
+            }).appendTo("#output");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
